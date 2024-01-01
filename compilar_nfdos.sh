@@ -4,10 +4,6 @@ source .env
 
 instalar_requerimentos(){
 
-	echo "==> Checkando se os requerimentos foram instalados..."
-    if [ ! -f ".requerimentos_host.box" ];
-	then
-
 		echo "==> Instalar pacotes para a criação da imagem ISO..."
 		sudo apt install -y \
 			binutils \
@@ -25,11 +21,7 @@ instalar_requerimentos(){
 
 		echo "==> Removendo pacotes do Ubuntu desnecessários"
 		sudo apt autoremove -y
-		touch .requerimentos_host.box
-
-	fi
-    echo "==> Os requerimentos minimos foram instalados."
-    sleep 3
+		
 }
 
 compilar_iso(){
