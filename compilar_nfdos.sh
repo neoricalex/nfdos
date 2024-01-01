@@ -39,7 +39,7 @@ compilar_iso(){
 
 		echo "A $NFDOS_ROOT/nfdos.iso não existe."
 
-		echo "Checkando se é necesário limpar alguns vestigios do desenvolvimento"
+		echo "Checkando se é necessário limpar alguns vestigios do desenvolvimento"
 		if [ -d "$NFDOS_ROOT/image" ]; then
 			sudo rm -rf $NFDOS_ROOT/image
 		fi

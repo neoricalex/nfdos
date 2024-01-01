@@ -10,7 +10,7 @@ fi
 echo "Checkando se a $NFDOS_DISCO existe"
 if [ ! -f "$NFDOS_DISCO" ]; then
     echo "Criando a $NFDOS_DISCO. Aguarde por favor..."
-    sudo dd if=/dev/zero of=$NFDOS_DISCO count=1024 bs=10485760
+    sudo dd if=/dev/zero of=$NFDOS_DISCO bs=64K conv=noerror,sync
     echo "Formatando a $NFDOS_DISCO"
     sudo mkfs -t ext4 $NFDOS_DISCO
 else
