@@ -13,7 +13,7 @@ BLDFL="${STARTDIR}/buildfiles"
 function cleanup() {
     # clean up our temp folder
     sudo rm -rf ./work
-    sudo rm -rf ./buildfiles
+    #sudo rm -rf ./buildfiles
 }
 
 #Functions for progress Spinner for long running commands
@@ -274,6 +274,11 @@ EOF
 
 }
 
+function instalar-requerimentos() {
+    sudo apt install -y \
+        debootstrap
+}
+
 function buildubuntu() {
     # create our working folders
     mkdir work
@@ -453,7 +458,8 @@ main() {
         end
     else
 	cleanup
-    buildfiles
+    instalar-requerimentos
+    #buildfiles
     buildubuntu
     buildenv
     mkboot
