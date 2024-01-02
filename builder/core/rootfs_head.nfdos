@@ -39,7 +39,7 @@ echo -e "$inicio_cor ==> Atualizando o gerenciador de pacotes deb $fim_cor"
 apt update
 
 echo -e "$inicio_cor ==> Instalando o systemd $fim_cor"
-apt install -y --no-install-recommends libterm-readline-gnu-perl systemd-sysv 
+apt install -y libterm-readline-gnu-perl systemd-sysv 
 
 echo -e "$inicio_cor ==> Criando o divert $fim_cor"
 dbus-uuidgen > /etc/machine-id
@@ -49,11 +49,11 @@ ln -s /bin/true /sbin/initctl
 
 instalar_pacotes_base(){
     echo -e "$inicio_cor ==> Instalando os pacotes base $fim_cor"
-    apt install -y --no-install-recommends build-essential
-    apt install -y --no-install-recommends linux-generic
-    apt install -y --no-install-recommends ubuntu-minimal
+    apt install -y build-essential
+    apt install -y linux-generic
+    apt install -y ubuntu-minimal
 
-    apt install -y --no-install-recommends \
+    apt install -y \
         casper \
         lupin-casper \
         discover \
@@ -70,7 +70,7 @@ instalar_pacotes_base(){
 instalar_pacotes_uteis(){
 
     echo -e "$inicio_cor ==> Instalando pacotes úteis $fim_cor"
-    apt install -y --no-install-recommends \
+    apt install -y \
         curl \
         wget \
         openssh-server \
@@ -91,7 +91,7 @@ instalar_pacotes_uteis(){
 }
 instalar_ubiquity(){
     echo -e "$inicio_cor ==> Instalando pacotes adicionais para o Live CD $fim_cor"
-    apt install -y --no-install-recommends \
+    apt install -y \
         ubiquity \
         ubiquity-casper \
         ubiquity-frontend-gtk \
@@ -122,7 +122,7 @@ systemctl enable --now systemd-networkd-wait-online.service
 }
 diversos(){
     echo "==> Instalar os pacotes em Português"
-    apt install -y --no-install-recommends \
+    apt install -y \
         language-pack-pt \
         language-pack-pt-base \
         language-pack-gnome-pt \
